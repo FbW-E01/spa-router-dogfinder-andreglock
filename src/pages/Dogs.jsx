@@ -1,4 +1,4 @@
-import { NavLink, useRouteMatch, Route, Switch, useParams } from 'react-router-dom';
+import { NavLink, Route, Switch, useParams } from 'react-router-dom';
 import React from 'react';
 import hazel from './../images/hazel.jpg'
 import tubby from './../images/tubby.jpg'
@@ -7,6 +7,7 @@ import linda from './../images/linda.jpg'
 
 function Dog() {
     const { dogName } = useParams();
+    document.querySelectorAll(".overlay").forEach((e) => e.style.backgroundColor = 'rgba(169, 169, 169, 0.561' )
     if (dogName === 'linda') {
         return <div>
             <h2>Linda Age: 4</h2>
@@ -48,10 +49,30 @@ export default function Dogs() {
     return (<div>
         <h1>We have Dogz, click on them for more info!</h1>
         <p>
-            <NavLink to={`/linda`}><img src={linda} alt="linda"/></NavLink>
-            <NavLink to={`/whiskey`}><img src={whiskey} alt="whiskey"/></NavLink>
-            <NavLink to={`/hazel`}><img src={hazel} alt="hazel"/></NavLink>
-            <NavLink to={`/tubby`}><img src={tubby} alt="tubby"/></NavLink>
+            <NavLink to={`/linda`}>
+                <div className="container">
+                    <img src={linda} alt="linda"/>
+                    <div className="overlay"></div>
+                </div>
+            </NavLink>
+            <NavLink to={`/whiskey`}>
+                <div className="container">
+                    <img src={whiskey} alt="whiskey"/>
+                    <div className="overlay"></div>
+                </div>
+            </NavLink>
+            <NavLink to={`/hazel`}>
+                <div className="container">
+                    <img src={hazel} alt="hazel"/>
+                    <div className="overlay"></div>
+                </div>
+            </NavLink>
+            <NavLink to={`/tubby`}>
+                <div className="container">
+                    <img src={tubby} alt="tubby"/>
+                    <div className="overlay"></div>
+                </div>
+            </NavLink>
         </p>
 
         <Switch>
