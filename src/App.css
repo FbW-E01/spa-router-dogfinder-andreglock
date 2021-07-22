@@ -1,0 +1,11 @@
+body {
+    text-align: center;
+}
+
+img {
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: solid lightblue 3px;
+}
